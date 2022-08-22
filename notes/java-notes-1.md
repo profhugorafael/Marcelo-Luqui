@@ -46,10 +46,11 @@ int aux = a;
 a = b;
 b = aux;
 ```
-
-Aluno joao;
-Aluno maria;
+```java
+Aluno joao = new Aluno();
+Aluno maria = new Auno();
 
 Aluno aux = joao;
 joao = maria;
 maria = aux;
+```
