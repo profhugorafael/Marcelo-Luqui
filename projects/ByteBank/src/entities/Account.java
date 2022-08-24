@@ -8,7 +8,6 @@ public class Account {
   private double balance;
 
   // getters and setters
-
   public double getBalance() {
     return balance;
   }
