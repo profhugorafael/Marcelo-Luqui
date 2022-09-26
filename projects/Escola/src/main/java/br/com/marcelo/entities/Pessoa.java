@@ -1,5 +1,7 @@
 package br.com.marcelo.entities;
 
+import java.util.Objects;
+
 public class Pessoa {
 
     // atributos
@@ -62,6 +64,8 @@ public class Pessoa {
         return "Eu sou uma Pessoa";
     }
 
+    public final String whoIBegin() { return "Eu sou uma Pessoa desde sempre"; }
+
     // toString
 
     @Override
@@ -72,5 +76,31 @@ public class Pessoa {
                 ", idade=" + idade +
                 ", altura=" + altura +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) return true;
+        if (other == null || getClass() != other.getClass()) return false;
+
+        Pessoa pessoa = (Pessoa) other;
+
+        if (idade != pessoa.idade) return false;
+        if (Double.compare(pessoa.altura, altura) != 0) return false;
+        if (!Objects.equals(nome, pessoa.nome)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = nome != null ? nome.hashCode() : 0;
+        result = 31 * result + (apelido != null ? apelido.hashCode() : 0);
+        result = 31 * result + idade;
+        temp = Double.doubleToLongBits(altura);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
     }
 }

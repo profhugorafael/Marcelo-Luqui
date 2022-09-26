@@ -1,5 +1,7 @@
 package br.com.marcelo.entities;
 
+import java.util.Comparator;
+
 public class Aluno extends Pessoa {
 
     private String RA;
@@ -9,11 +11,9 @@ public class Aluno extends Pessoa {
         super(nome, idade, altura);
         this.RA = RA;
     }
-
-    public Aluno( String RA, String nome, String apelido, int idade, double altura, double notaFinal) {
-        super(nome, apelido, idade, altura);
+    public Aluno(String nome, int idade, double altura, String RA) {
+        super(nome, idade, altura);
         this.RA = RA;
-        this.notaFinal = notaFinal;
     }
 
     // getters and setters
@@ -51,4 +51,6 @@ public class Aluno extends Pessoa {
                 ", notaFinal=" + notaFinal +
                 "} ";
     }
+
+
 }
