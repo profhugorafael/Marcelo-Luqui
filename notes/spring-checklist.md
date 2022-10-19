@@ -74,3 +74,18 @@ Criando um perfil de teste:
 spring.profiles.active=test
 springjpa.open-in-view=true
 ```
+
+Configure as variáveis no seu perfil de teste:
+
+```
+spring.datasource.url=jdbc:mysql://localhost:3306/nome_do_banco?serverTimezone=UTC
+
+spring.datasource.username=root
+spring.datasource.password=admin123
+ 
+spring.jpa.properties.hibernate.show_sql=true
+spring.jpa.properties.hibernate.format_sql=true
+```
+
+> Nestas configurações estamos usando um banco de dados local na porta 3306, com um usuário root e a senha admin123
+

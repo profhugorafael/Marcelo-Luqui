@@ -1,0 +1,23 @@
+package br.com.marcelo.redesocial.controller.dto;
+
+import br.com.marcelo.redesocial.entity.User;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
+public class UserFormDTO {
+
+    private String username;
+    private String email;
+    private String password;
+
+    public User toUser() {
+        User user = new User();
+        user.setUsername(username);
+        user.setEmail(email);
+        user.setPassword(password);
+        user.setEnabled(true);
+        return user;
+    }
+
+}
