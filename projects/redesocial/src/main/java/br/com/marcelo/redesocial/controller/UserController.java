@@ -24,7 +24,7 @@ public class UserController {
         List<UserDTO> users = userService
                 .findAll()
                 .stream()
-                .map(u -> new UserDTO(u))
+                .map(UserDTO::new)
                 .collect(Collectors.toList());
 
         return ResponseEntity.ok().body(users);
